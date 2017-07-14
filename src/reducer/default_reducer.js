@@ -1,4 +1,4 @@
-import allActions from '../actions';
+import allActions from '../../actions/index';
 import { initState } from '../stores';
 
 export const defaultReducer = (state = {...initState}, action) => {

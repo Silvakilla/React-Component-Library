@@ -1,6 +1,6 @@
 import {createStore} from 'redux';
-import allActions from '../actions';
-import reducersCombined from '../reducer';
+import allActions from '../../actions/index';
+import reducersCombined from '../../reducer/index';
 
 export const switchFoo = () => {
     return {
