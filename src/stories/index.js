@@ -3,7 +3,8 @@ import React from 'react';
 import {storiesOf} from '@storybook/react';
 
 import Text from '../Components/Text/Text';
-import CustomInput from '../Components/CustomInput/CustomInput';
+import Input from '../Components/Input/Input';
+import { Panel } from '../Components/Panel/Panel';
 
 const documentation = storiesOf('Documentation', module);
 
@@ -68,16 +69,31 @@ componentStories.add('Output',() =>{
     return (
         <div>
             <Text data='Test'/>
-            <Text data={['Array-Test']}/>
+            <Text data={['Array-Test','Array-Test 2']}/>
             <Text data={<p>P-Element-Test</p>}/>
         </div>
     );
 });
 
-componentStories.add('Custom Input',() => {
+componentStories.add('Input',() => {
     return (
         <div>
-            <CustomInput type="text"/>
+            <h2>Text-Input with RegEx</h2>
+            <Input type="text" placeholder="text" pattern="[A-Za-z0-9]{5}" />
+
+            <h2>Other Inputs</h2>
+            <Input type="email" placeholder="email" />
+            <Input type="password" placeholder="password" />
+        </div>
+    )
+});
+
+componentStories.add('Panel',() => {
+    return(
+        <div>
+            <Panel style={{border:'1px solid black',width:'380px',height:'120px'}}>
+                <p>Text</p>
+            </Panel>
         </div>
     )
 });
