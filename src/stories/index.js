@@ -1,53 +1,83 @@
+import '../index.css';
 import React from 'react';
 import {storiesOf} from '@storybook/react';
 
-import '../index.css';
+import Text from '../Components/Text/Text';
+import CustomInput from '../Components/CustomInput/CustomInput';
 
-const flexStories = storiesOf('Flexbox', module);
+const documentation = storiesOf('Documentation', module);
 
-flexStories.add('blueprint',() => {
-    return <div>blue</div>
+documentation.add('PropTypes - Types',() => {
+    return (
+        <Text data={
+            <div>
+                <h3>All Types which can be used with PropTypes</h3>
+                <p>
+                    PropTypes.array
+                </p>
+                <p>
+                    PropTypes.bool
+                </p>
+                <p>
+                    PropTypes.func
+                </p>
+                <p>
+                    PropTypes.number
+                </p>
+                <p>
+                    PropTypes.object
+                </p>
+                <p>
+                    PropTypes.string
+                </p>
+                <p>
+                    PropTypes.symbol
+                </p>
+                <p>
+                    PropTypes.node
+                </p>
+                <p>
+                    PropTypes.element
+                </p>
+                <p>
+                    PropTypes.instanceOf(Message)
+                </p>
+                <p>
+                    PropTypes.oneOf(PropTypes.string,...)
+                </p>
+                <p>
+                    PropTypes.oneOfType([PropTypes.string,PropTypes.number])
+                </p>
+                <p>
+                    PropTypes.arrayOf(PropTypes.number)
+                </p>
+                <p>
+                    PropTypes.PropTypes.shape([curly brackets]color: PropTypes.string, fontSize: PropTypes.number[curly brackets])
+                </p>
+                <p>
+                    PropTypes.func.isRequired
+                </p>
+            </div>
+        }/>
+    );
 });
 
-flexStories.add('btn',() => {
-    return <div>
-        <div className="Button">123</div>
-    </div>
-});
+const componentStories = storiesOf('React Component Library', module);
 
-flexStories.add('btn - emoji',() => {
-    return <div>
-        <div className="Button">😀 😎 👍 💯</div>
-    </div>
-});
-
-flexStories.add('grid - few items',() => {
-    return <div style={{width: '300px', background: 'silver', padding: '10px'}}>
-        <div className="BtnGrid">
-            <div className="Button">1</div>
-            <div className="Button">2</div>
-            <div className="Button">10</div>
-            <div className="Button">50</div>
-            <div className="Button">100</div>
-            <div className="Button">1000</div>
+componentStories.add('Output',() =>{
+    return (
+        <div>
+            <Text data='Test'/>
+            <Text data={['Array-Test']}/>
+            <Text data={<p>P-Element-Test</p>}/>
         </div>
-    </div>
+    );
 });
 
-flexStories.add('grid - lots of items',() => {
-    return <div style={{width: '300px', background: 'silver', padding: '10px'}}>
-        <div className="BtnGrid">
-            <div className="Button">1</div>
-            <div className="Button">2</div>
-            <div className="Button">5</div>
-            <div className="Button">10</div>
-            <div className="Button">20</div>
-            <div className="Button">30</div>
-            <div className="Button">XXS</div>
-            <div className="Button">XXS</div>
-            <div className="Button">XXS</div>
-            <div className="Button">😎</div>
-            <div className="Button">👍</div>
+componentStories.add('Custom Input',() => {
+    return (
+        <div>
+            <CustomInput type="text"/>
         </div>
-    </div>
+    )
 });
